@@ -15,16 +15,16 @@ class UtazasiModSeeder extends Seeder
     {
         Utazasi_mod::factory()->create([
             'tipus' => 'repülő',
-            
+
         ]);
 
         Utazasi_mod::factory()->create([
             'tipus' => 'busz',
-            
+
         ]);
         Utazasi_mod::factory()->create([
-            'tipus' => 'repülő',
-            
+            'tipus' => 'vonat',
+
         ]);
     }
 }

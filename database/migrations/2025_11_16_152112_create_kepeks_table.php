@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -16,7 +17,12 @@ return new class extends Migration
             $table->foreignId('utazas_id')->constrained('utazasi_csomagoks');
             $table->string('kep_eleresi_ut',50);
             $table->timestamps();
+
+            $table->unique('utazas_id');
+            $table->unique('kep_eleresi_ut');
         });
+
+
     }
 
     /**

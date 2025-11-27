@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -22,7 +23,20 @@ return new class extends Migration
             $table->integer('szabad_helyek');
             $table->integer('ar');
             $table->timestamps();
+
         });
+
+        DB::statement('ALTER TABLE utazasi_csomagoks
+            ADD CONSTRAINT utazasi_csomagoks_letszam_check CHECK (letszam > 0)');
+
+        DB::statement('ALTER TABLE utazasi_csomagoks
+            ADD CONSTRAINT utazasi_csomagoks_szabad_helyek_check CHECK (szabad_helyek >= 0)');
+
+        DB::statement('ALTER TABLE utazasi_csomagoks
+            ADD CONSTRAINT utazasi_csomagoks_ar_check CHECK (ar >= 0)');
+
+        DB::statement('ALTER TABLE utazasi_csomagoks
+            ADD CONSTRAINT utazasi_csomagoks_visszaut_datum_check CHECK (visszaut_datum >= indulasi_datum)');
     }
 
     /**
