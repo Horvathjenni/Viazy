@@ -18,5 +18,11 @@ class LastMArSeeder extends Seeder
         'datum'=>'2026-11-15',
         'szazalek'=>30,
         ]);
+
+         LastMAr::factory()->create([
+        'utazasi_id'=>10,
+        'datum'=>'2026-12-15',
+        'szazalek'=>30,
+        ]);
     }
 }

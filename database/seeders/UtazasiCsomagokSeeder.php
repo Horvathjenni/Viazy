@@ -46,5 +46,29 @@ class UtazasiCsomagokSeeder extends Seeder
             'ar'=>70000,
 
         ]);
+
+        UtazasiCsomagok::factory()->create([
+            'helyszin_id'=>4,
+            'indulasi_datum'=>'2025-12-18',
+            'visszaut_datum'=>'2025-12-25',
+            'utazasi_mod_id'=>3,
+            'lastminute'=>true,
+            'letszam'=>6,
+            'szabad_helyek'=>2,
+            'ar'=>70000,
+
+        ]);
+
+        UtazasiCsomagok::factory()->create([
+            'helyszin_id'=>1,
+            'indulasi_datum'=>'2025-12-14',
+            'visszaut_datum'=>'2025-12-25',
+            'utazasi_mod_id'=>2,
+            'lastminute'=>false,
+            'letszam'=>6,
+            'szabad_helyek'=>0,
+            'ar'=>50000,
+
+        ]);
     }
 }
